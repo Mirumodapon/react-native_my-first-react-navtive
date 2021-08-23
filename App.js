@@ -17,16 +17,20 @@ export default function App() {
 		Alert.prompt('Title', 'Message', (text) => console.log(text));
 
 	return (
-		<SafeAreaView style={styles.container}>
+		<SafeAreaView style={[styles.container, containerStyle]}>
 			<Button
 				title="Click me - alert"
 				onPress={handlePress}
-				color="orange"
+				color="white"
 			/>
 			<Button title="Click me - prompt" onPress={handlePress2} />
 		</SafeAreaView>
 	);
 }
+
+const containerStyle = {
+	backgroundColor: 'orange'
+};
 
 const styles = StyleSheet.create({
 	container: {
