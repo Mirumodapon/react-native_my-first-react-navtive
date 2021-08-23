@@ -14,8 +14,7 @@ export default function App() {
 				flexDirection: 'row',
 				justifyContent: 'center',
 				alignItems: 'center',
-				alignContent: 'center',
-				flexWrap: 'wrap'
+				alignContent: 'center'
 			}}
 		>
 			<View
@@ -29,26 +28,15 @@ export default function App() {
 				style={{
 					backgroundColor: 'gold',
 					width: 100,
-					height: 100
+					height: 100,
+					top: -20,
+					right: 20,
+					position: 'absolute'
 				}}
 			/>
 			<View
 				style={{
 					backgroundColor: 'tomato',
-					width: 100,
-					height: 100
-				}}
-			/>
-			<View
-				style={{
-					backgroundColor: 'gray',
-					width: 100,
-					height: 100
-				}}
-			/>
-			<View
-				style={{
-					backgroundColor: 'green',
 					width: 100,
 					height: 100
 				}}
