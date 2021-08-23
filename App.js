@@ -4,6 +4,9 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import { Button } from 'react-native';
 import { Alert } from 'react-native';
 
+import { Platform } from 'react-native';
+import { StatusBar } from 'react-native';
+
 export default function App() {
 	console.log('App executed!');
 
@@ -36,7 +39,6 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: 'white',
-		justifyContent: 'center',
-		alignItems: 'center'
+		paddingTop: StatusBar.currentHeight
 	}
 });
