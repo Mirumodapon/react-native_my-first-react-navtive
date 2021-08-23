@@ -8,20 +8,27 @@ export default function App() {
 
 	return (
 		<View
-			style={{ backgroundColor: 'white', flex: 1, flexDirection: 'row' }}
+			style={{
+				backgroundColor: 'white',
+				flex: 1,
+				flexDirection: 'row',
+				justifyContent: 'space-evenly',
+				alignItems: 'center'
+			}}
 		>
 			<View
 				style={{
 					backgroundColor: 'dodgerblue',
 					width: 100,
-					height: 100
+					height: 120,
+					alignSelf: 'flex-end'
 				}}
 			/>
 			<View
 				style={{
 					backgroundColor: 'gold',
 					width: 100,
-					height: 100
+					height: 180
 				}}
 			/>
 			<View
