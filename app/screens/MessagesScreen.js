@@ -24,6 +24,7 @@ const messages = [
 
 export default (props) => {
 	const [msg, setMsg] = useState(messages);
+	const [refreshing, setRefreshing] = useState(false);
 	const handleDelete = (message) => {
 		// delete the message from messages
 		const newMsg = msg.filter((m) => m.id !== message.id);
@@ -49,6 +50,8 @@ export default (props) => {
 					/>
 				)}
 				ItemSeparatorComponent={ListItemSeparator}
+				refreshing={refreshing}
+				onRefresh={() => setMsg(messages)}
 			/>
 		</Screen>
 	);

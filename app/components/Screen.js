@@ -9,6 +9,7 @@ export default ({ children }) => (
 
 const styles = StyleSheet.create({
 	screen: {
-		paddingTop: Constants.statusBarHeight
+		paddingTop: Constants.statusBarHeight,
+		flex: 1
 	}
 });
