@@ -33,6 +33,7 @@ export default (props) => {
 						title={item.title}
 						subTitle={item.description}
 						image={item.image}
+						onPress={() => console.log('Message Selected', item)}
 					/>
 				)}
 				ItemSeparatorComponent={ListItemSeparator}
