@@ -9,10 +9,13 @@ import {
 
 import colors from '../config/colors';
 
-export default (props) => {
+export default ({ title, onPress, color = 'primary' }) => {
 	return (
-		<TouchableOpacity style={styles.button} onPress={props.onPress}>
-			<Text style={styles.text}>{props.title}</Text>
+		<TouchableOpacity
+			style={[styles.button, { backgroundColor: colors[color] }]}
+			onPress={onPress}
+		>
+			<Text style={styles.text}>{title}</Text>
 		</TouchableOpacity>
 	);
 };
@@ -24,7 +27,8 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		padding: 15,
-		width: '100%'
+		width: '100%',
+		marginVertical: 10
 	},
 	text: {
 		color: colors.white,
