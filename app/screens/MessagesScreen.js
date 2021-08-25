@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FlatList, SafeAreaView, StyleSheet, View } from 'react-native';
 import ListItem from '../components/ListItem';
+import ListItemDeleteAction from '../components/ListItemDeleteAction';
 import ListItemSeparator from '../components/ListItemSeparator';
 
 import Screen from '../components/Screen';
-import ListingDetailsScreen from './ListingDetailsScreen';
 
 const messages = [
 	{
@@ -23,10 +23,17 @@ const messages = [
 ];
 
 export default (props) => {
+	const [msg, setMsg] = useState(messages);
+	const handleDelete = (message) => {
+		// delete the message from messages
+		const newMsg = msg.filter((m) => m.id !== message.id);
+		setMsg(newMsg);
+	};
+
 	return (
 		<Screen>
 			<FlatList
-				data={messages}
+				data={msg}
 				keyExtractor={(message) => message.id.toString()}
 				renderItem={({ item }) => (
 					<ListItem
@@ -34,6 +41,11 @@ export default (props) => {
 						subTitle={item.description}
 						image={item.image}
 						onPress={() => console.log('Message Selected', item)}
+						renderRightActions={() => (
+							<ListItemDeleteAction
+								onPress={() => handleDelete(item)}
+							/>
+						)}
 					/>
 				)}
 				ItemSeparatorComponent={ListItemSeparator}
