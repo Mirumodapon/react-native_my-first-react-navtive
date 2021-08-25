@@ -6,9 +6,20 @@ export default ({ children }) => {
 	return <Text style={styles.text}>{children}</Text>;
 };
 
+const platfromStyle = Platform.select({
+	ios: {
+		fontSize: 30,
+		fontFamily: 'Avenit'
+	},
+	android: {
+		fontSize: 18,
+		fontFamily: 'Roboto'
+	}
+});
+
 const styles = StyleSheet.create({
 	text: {
-		fontSize: 30,
-		fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir'
+		color: 'tomato',
+		...platfromStyle
 	}
 });
