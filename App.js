@@ -1,7 +1,7 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 // import ViewImageScreen from './app/screens/ViewImageScreen';
 // import WelcomeScreen from './app/screens/WelcomeScreen';
 
@@ -12,30 +12,22 @@ export default function App() {
 		<View
 			style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
 		>
-			<View
+			<Text
 				style={{
-					backgroundColor: 'dodgerblue',
-					width: 100,
-					height: 100,
-					padding: 20
+					fontSize: 30,
+					fontFamily: 'Courier',
+					fontStyle: 'italic',
+					fontWeight: 'bold',
+					color: 'tomato',
+					textTransform: 'capitalize',
+					textDecorationLine: 'line-through',
+					textAlign: 'center',
+					lineHeight: 60
 				}}
 			>
-				<View
-					style={{
-						backgroundColor: 'gold',
-						width: 40,
-						height: 40
-					}}
-				></View>
-			</View>
-			<View
-				style={{
-					backgroundColor: 'tomato',
-					width: 100,
-					height: 100,
-					margin: 20
-				}}
-			></View>
+				I love react native. My first React native app! here's some more
+				text.
+			</Text>
 		</View>
 	);
 }
