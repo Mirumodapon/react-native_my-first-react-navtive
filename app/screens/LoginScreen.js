@@ -34,7 +34,13 @@ export default (props) => {
 				onSubmit={(values) => console.log(values)}
 				validationSchema={validationSchema}
 			>
-				{({ handleChange, handleSubmit, errors }) => (
+				{({
+					handleChange,
+					handleSubmit,
+					errors,
+					setFieldTouched,
+					touched
+				}) => (
 					<>
 						<AppTextInput
 							placeholder="Email"
@@ -44,19 +50,22 @@ export default (props) => {
 							keyboardType="email-address"
 							textContentType="emailAddress"
 							onChangeText={handleChange('email')}
+							onBlur={() => setFieldTouched('email')}
 						/>
-
-						<ErrorMessage error={errors.email} />
+						{touched.email && <ErrorMessage error={errors.email} />}
 						<AppTextInput
 							autoCapitalize="none"
 							autoCurrent={false}
 							icon="lock"
 							placeholder="Password"
 							textContentType="password"
+							onBlur={() => setFieldTouched('password')}
 							onChangeText={handleChange('password')}
 							secureTextEntry
 						/>
-						<ErrorMessage error={errors.password} />
+						{touched.password && (
+							<ErrorMessage error={errors.password} />
+						)}
 
 						<AppButton title="Login" onPress={handleSubmit} />
 					</>
