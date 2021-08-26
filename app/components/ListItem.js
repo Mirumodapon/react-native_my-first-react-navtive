@@ -5,6 +5,8 @@ import colors from '../config/colors';
 
 import { Swipeable } from 'react-native-gesture-handler';
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 export default ({
 	title,
 	image,
@@ -27,6 +29,12 @@ export default ({
 							</AppText>
 						)}
 					</View>
+					<MaterialCommunityIcons
+						color={colors.medium}
+						style={{}}
+						name="chevron-right"
+						size={25}
+					/>
 				</View>
 			</TouchableHighlight>
 		</Swipeable>
@@ -35,13 +43,15 @@ export default ({
 
 const styles = StyleSheet.create({
 	container: {
+		alignItems: 'center',
 		flexDirection: 'row',
 		padding: 15,
 		backgroundColor: colors.white
 	},
 	detailsContainer: {
 		marginLeft: 10,
-		justifyContent: 'center'
+		justifyContent: 'center',
+		flex: 1
 	},
 	image: {
 		width: 70,

@@ -32,5 +32,5 @@ export default function App() {
 
 	const [category, setCategory] = useState();
 
-	return <LoginScreen />;
+	return <MessagesScreen />;
 }
