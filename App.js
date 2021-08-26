@@ -16,6 +16,7 @@ import AccountScreen from './app/screens/AccountScreen';
 
 import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker';
 
 export default function App() {
 	console.log('App executed!');
@@ -24,10 +25,8 @@ export default function App() {
 
 	return (
 		<Screen>
-			<Switch
-				value={isNew}
-				onValueChange={(newValue) => setIsNew(newValue)}
-			/>
+			<AppPicker icon="apps" placeholder="Category" />
+			<AppTextInput icon="email" placeholder="email" />
 		</Screen>
 	);
 }
