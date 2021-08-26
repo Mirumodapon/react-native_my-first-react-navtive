@@ -1,7 +1,7 @@
 // import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 
-import { TextInput, View, Text } from 'react-native';
+import { TextInput, View, Text, Switch } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
@@ -20,11 +20,14 @@ import AppTextInput from './app/components/AppTextInput';
 export default function App() {
 	console.log('App executed!');
 
-	const [firstName, setFirstName] = useState('');
+	const [isNew, setIsNew] = useState(false);
 
 	return (
 		<Screen>
-			<AppTextInput icon="email" placeholder="User name" />
+			<Switch
+				value={isNew}
+				onValueChange={(newValue) => setIsNew(newValue)}
+			/>
 		</Screen>
 	);
 }
