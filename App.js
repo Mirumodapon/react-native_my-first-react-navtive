@@ -17,6 +17,7 @@ import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
+import LoginScreen from './app/screens/LoginScreen';
 
 export default function App() {
 	console.log('App executed!');
@@ -31,16 +32,5 @@ export default function App() {
 
 	const [category, setCategory] = useState();
 
-	return (
-		<Screen>
-			<AppPicker
-				selectedItem={category}
-				onSelectItem={(item) => setCategory(item)}
-				icon="apps"
-				placeholder="Category"
-				items={categories}
-			/>
-			<AppTextInput icon="email" placeholder="email" />
-		</Screen>
-	);
+	return <LoginScreen />;
 }
