@@ -9,6 +9,7 @@ import AppText from '../components/AppText';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import ErrorMessage from '../components/ErrorMessage';
+import AppFormField from '../components/AppFormField';
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string().required().email().label('Email'),
@@ -42,31 +43,24 @@ export default (props) => {
 					touched
 				}) => (
 					<>
-						<AppTextInput
+						<AppFormField
+							name="email"
 							placeholder="Email"
 							icon="email"
 							autoCapitalize="none"
 							autoCurrent={false}
 							keyboardType="email-address"
 							textContentType="emailAddress"
-							onChangeText={handleChange('email')}
-							onBlur={() => setFieldTouched('email')}
 						/>
-						{touched.email && <ErrorMessage error={errors.email} />}
-						<AppTextInput
+						<AppFormField
+							name="password"
 							autoCapitalize="none"
 							autoCurrent={false}
 							icon="lock"
 							placeholder="Password"
 							textContentType="password"
-							onBlur={() => setFieldTouched('password')}
-							onChangeText={handleChange('password')}
 							secureTextEntry
 						/>
-						{touched.password && (
-							<ErrorMessage error={errors.password} />
-						)}
-
 						<AppButton title="Login" onPress={handleSubmit} />
 					</>
 				)}
