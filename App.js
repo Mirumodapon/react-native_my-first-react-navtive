@@ -1,7 +1,7 @@
 // import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 
-import { View } from 'react-native';
+import { TextInput, View, Text } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
@@ -19,5 +19,21 @@ import ListingsScreen from './app/screens/ListingsScreen';
 export default function App() {
 	console.log('App executed!');
 
-	return <ListingsScreen />;
+	const [firstName, setFirstName] = useState('');
+
+	return (
+		<Screen>
+			<Text children={firstName} />
+			<TextInput
+				secureTextEntry
+				placeholder="First name"
+				onChangeText={(text) => setFirstName(text)}
+				style={{ borderBottomColor: '#ccc', borderBottomWidth: 1 }}
+				// keyboardType="numeric"
+				// maxLength={5}
+				// clearButtonMode="always"
+				// secureTextEntry
+			/>
+		</Screen>
+	);
 }
