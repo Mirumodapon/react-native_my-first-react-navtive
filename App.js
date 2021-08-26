@@ -15,6 +15,7 @@ import ListItem from './app/components/ListItem';
 import AccountScreen from './app/screens/AccountScreen';
 
 import ListingsScreen from './app/screens/ListingsScreen';
+import AppTextInput from './app/components/AppTextInput';
 
 export default function App() {
 	console.log('App executed!');
@@ -23,17 +24,7 @@ export default function App() {
 
 	return (
 		<Screen>
-			<Text children={firstName} />
-			<TextInput
-				secureTextEntry
-				placeholder="First name"
-				onChangeText={(text) => setFirstName(text)}
-				style={{ borderBottomColor: '#ccc', borderBottomWidth: 1 }}
-				// keyboardType="numeric"
-				// maxLength={5}
-				// clearButtonMode="always"
-				// secureTextEntry
-			/>
+			<AppTextInput icon="email" placeholder="User name" />
 		</Screen>
 	);
 }
