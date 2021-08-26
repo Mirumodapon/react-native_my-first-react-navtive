@@ -23,9 +23,23 @@ export default function App() {
 
 	const [isNew, setIsNew] = useState(false);
 
+	const categories = [
+		{ label: 'Furniture', value: 1 },
+		{ label: 'Clothing', value: 2 },
+		{ label: 'Cameras', value: 3 }
+	];
+
+	const [category, setCategory] = useState();
+
 	return (
 		<Screen>
-			<AppPicker icon="apps" placeholder="Category" />
+			<AppPicker
+				selectedItem={category}
+				onSelectItem={(item) => setCategory(item)}
+				icon="apps"
+				placeholder="Category"
+				items={categories}
+			/>
 			<AppTextInput icon="email" placeholder="email" />
 		</Screen>
 	);
