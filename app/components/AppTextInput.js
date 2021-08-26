@@ -3,6 +3,7 @@ import React from 'react';
 
 import { TextInput, View } from 'react-native';
 import colors from '../config/colors';
+import defaultStyle from '../config/styles';
 
 export default ({ icon, ...otherProps }) => {
 	return (
@@ -27,14 +28,7 @@ export default ({ icon, ...otherProps }) => {
 					}}
 				/>
 			)}
-			<TextInput
-				{...otherProps}
-				style={{
-					fontSize: 18,
-					fontFamily: 'Avenir',
-					color: colors.dark
-				}}
-			/>
+			<TextInput {...otherProps} style={defaultStyle.text} />
 		</View>
 	);
 };
